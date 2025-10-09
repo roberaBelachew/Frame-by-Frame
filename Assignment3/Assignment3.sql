@@ -1,127 +1,142 @@
+DROP TABLE IF EXISTS Likes;
+DROP TABLE IF EXISTS Comments;
+DROP TABLE IF EXISTS Reviews;
+DROP TABLE IF EXISTS Watchlist;
+DROP TABLE IF EXISTS MovieSources;
+DROP TABLE IF EXISTS Sources;
+DROP TABLE IF EXISTS MovieCategories;
+DROP TABLE IF EXISTS Categories;
+DROP TABLE IF EXISTS MovieTags;
+DROP TABLE IF EXISTS Tags;
+DROP TABLE IF EXISTS MovieAgeRating;
+DROP TABLE IF EXISTS AgeRating;
+DROP TABLE IF EXISTS Movies;
+DROP TABLE IF EXISTS ProfileInfo;
+DROP TABLE IF EXISTS Users;
+
 -- user and profile
-CREATE TABLE Users
+CREATE TABLE Users 
 (
-id INT PRIMARY KEY AUTO_INCREMENT,
-email VARCHAR(100) UNIQUE NOT NULL,
-password VARCHAR(255) NOT NULL
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
 );
-CREATE TABLE ProfileInfo
+CREATE TABLE ProfileInfo 
 (
-id INT PRIMARY KEY AUTO_INCREMENT,
-userID INT UNIQUE,
-joinDate DATE NOT NULL,
-username VARCHAR(50) UNIQUE NOT NULL,
-FOREIGN KEY (userID) REFERENCES Users(id)
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    userID INT UNIQUE,
+    joinDate DATE NOT NULL,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    FOREIGN KEY (userID) REFERENCES Users(id)
 );
 -- movies
-CREATE TABLE Movies
+CREATE TABLE Movies 
 (
-id INT PRIMARY KEY AUTO_INCREMENT,
-title VARCHAR(200) NOT NULL,
-releaseYear INT NOT NULL,
-description TEXT
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(200) NOT NULL,
+    releaseYear INT NOT NULL,
+    description TEXT
 );
 -- watchlist
-CREATE TABLE Watchlist
+CREATE TABLE Watchlist 
 (
-id INT PRIMARY KEY AUTO_INCREMENT,
-userID INT NOT NULL,
-movieID INT NOT NULL,
-status VARCHAR(50),
-FOREIGN KEY (userID) REFERENCES Users(id),
-FOREIGN KEY (movieID) REFERENCES Movies(id)
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    userID INT NOT NULL,
+    movieID INT NOT NULL,
+    status VARCHAR(50),
+    FOREIGN KEY (userID) REFERENCES Users(id),
+    FOREIGN KEY (movieID) REFERENCES Movies(id)
 );
 -- reviews
-CREATE TABLE Reviews
+CREATE TABLE Reviews 
 (
-id INT PRIMARY KEY AUTO_INCREMENT,
-userID INT NOT NULL,
-movieID INT NOT NULL,
-rating DECIMAL(2,1) CHECK (rating >= 0 AND rating <= 10),
-flags INT DEFAULT 0,
-FOREIGN KEY (userID) REFERENCES Users(id),
-FOREIGN KEY (movieID) REFERENCES Movies(id)
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    userID INT NOT NULL,
+    movieID INT NOT NULL,
+    rating DECIMAL(3,1) CHECK (rating >= 0 AND rating <= 10),
+    flags INT DEFAULT 0,
+    FOREIGN KEY (userID) REFERENCES Users(id),
+    FOREIGN KEY (movieID) REFERENCES Movies(id)
 );
 -- user interactions (likes, comments)
-CREATE TABLE Comments
+CREATE TABLE Comments 
 (
-id INT PRIMARY KEY AUTO_INCREMENT,
-userID INT NOT NULL,
-reviewID INT NOT NULL,
-content TEXT NOT NULL,
-createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-FOREIGN KEY (userID) REFERENCES Users(id),
-FOREIGN KEY (reviewID) REFERENCES Reviews(id)
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    userID INT NOT NULL,
+    reviewID INT NOT NULL,
+    content TEXT NOT NULL,
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (userID) REFERENCES Users(id),
+    FOREIGN KEY (reviewID) REFERENCES Reviews(id)
 );
-CREATE TABLE Likes
+CREATE TABLE Likes 
 (
-userID INT,
-reviewID INT,
-PRIMARY KEY (userID, reviewID),
-FOREIGN KEY (userID) REFERENCES Users(id),
-FOREIGN KEY (reviewID) REFERENCES Reviews(id)
+    userID INT,
+    reviewID INT,
+    PRIMARY KEY (userID, reviewID),
+    FOREIGN KEY (userID) REFERENCES Users(id),
+    FOREIGN KEY (reviewID) REFERENCES Reviews(id)
 );
 -- age rating
-CREATE TABLE AgeRating
+CREATE TABLE AgeRating 
 (
-id INT PRIMARY KEY AUTO_INCREMENT,
-label ENUM('G','PG','PG-13','R','NC-17') NOT NULL
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    label ENUM('G','PG','PG-13','R','NC-17') NOT NULL
 );
-CREATE TABLE MovieAgeRating
+CREATE TABLE MovieAgeRating 
 (
-movieID INT,
-ratingID INT,
-PRIMARY KEY (movieID, ratingID),
-FOREIGN KEY (movieID) REFERENCES Movies(id),
-FOREIGN KEY (ratingID) REFERENCES AgeRating(id)
+    movieID INT,
+    ratingID INT,
+    PRIMARY KEY (movieID, ratingID),
+    FOREIGN KEY (movieID) REFERENCES Movies(id),
+    FOREIGN KEY (ratingID) REFERENCES AgeRating(id)
 );
 -- tags (genre, cast, director)
-CREATE TABLE Tags
+CREATE TABLE Tags 
 (
-id INT PRIMARY KEY AUTO_INCREMENT,
-type ENUM('Genre','Cast','Director') NOT NULL,
-value VARCHAR(100) NOT NULL
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    type ENUM('Genre','Cast','Director') NOT NULL,
+    value VARCHAR(100) NOT NULL
 );
-CREATE TABLE MovieTags
+CREATE TABLE MovieTags 
 (
-movieID INT,
-tagID INT,
-PRIMARY KEY (movieID, tagID),
-FOREIGN KEY (movieID) REFERENCES Movies(id),
-FOREIGN KEY (tagID) REFERENCES Tags(id)
+    movieID INT,
+    tagID INT,
+    PRIMARY KEY (movieID, tagID),
+    FOREIGN KEY (movieID) REFERENCES Movies(id),
+    FOREIGN KEY (tagID) REFERENCES Tags(id)
 );
 -- categories (feature, short, blockbuster)
-CREATE TABLE Categories
+CREATE TABLE Categories 
 (
-id INT PRIMARY KEY AUTO_INCREMENT,
-type ENUM('Feature','Short','Blockbuster') NOT NULL
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    type ENUM('Feature','Short','Blockbuster') NOT NULL
 );
-CREATE TABLE MovieCategories
+CREATE TABLE MovieCategories 
 (
-movieID INT,
-categoryID INT,
-PRIMARY KEY (movieID, categoryID),
-FOREIGN KEY (movieID) REFERENCES Movies(id),
-FOREIGN KEY (categoryID) REFERENCES Categories(id)
+    movieID INT,
+    categoryID INT,
+    PRIMARY KEY (movieID, categoryID),
+    FOREIGN KEY (movieID) REFERENCES Movies(id),
+    FOREIGN KEY (categoryID) REFERENCES Categories(id)
 );
--- Sources (streaming, buy, rent)
-CREATE TABLE Sources
+--sources (streaming, buy, rent)
+CREATE TABLE Sources 
 (
-id INT PRIMARY KEY AUTO_INCREMENT,
-type ENUM('Streaming Service','Buy','Rent') NOT NULL
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    type ENUM('Streaming Service','Buy','Rent') NOT NULL
 );
-CREATE TABLE MovieSources
+CREATE TABLE MovieSources 
 (
-movieID INT,
-sourceID INT,
-PRIMARY KEY (movieID, sourceID),
-FOREIGN KEY (movieID) REFERENCES Movies(id),
-FOREIGN KEY (sourceID) REFERENCES Sources(id)
+    movieID INT,
+    sourceID INT,
+    PRIMARY KEY (movieID, sourceID),
+    FOREIGN KEY (movieID) REFERENCES Movies(id),
+    FOREIGN KEY (sourceID) REFERENCES Sources(id)
 );
 
-#SAMPLE DATA
 
--- Insert Users (10 users)
+--SAMPLE DATA
 INSERT INTO Users (email, password) VALUES
 ('john.doe@email.com', 'hashed_password_1'),
 ('jane.smith@email.com', 'hashed_password_2'),
@@ -134,7 +149,7 @@ INSERT INTO Users (email, password) VALUES
 ('tom.anderson@email.com', 'hashed_password_9'),
 ('amy.taylor@email.com', 'hashed_password_10');
 
--- Insert ProfileInfo (10 profiles)
+
 INSERT INTO ProfileInfo (userID, joinDate, username) VALUES
 (1, '2023-01-15', 'MovieBuff_John'),
 (2, '2023-02-20', 'CinemaQueen_Jane'),
@@ -146,8 +161,6 @@ INSERT INTO ProfileInfo (userID, joinDate, username) VALUES
 (8, '2023-08-30', 'CinephileLisa'),
 (9, '2023-09-14', 'FilmCritic_Tom'),
 (10, '2023-10-25', 'PopcornAmy');
-
--- Insert Movies (15 movies)
 INSERT INTO Movies (title, releaseYear, description) VALUES
 ('The Shawshank Redemption', 1994, 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.'),
 ('The Dark Knight', 2008, 'When the menace known as the Joker wreaks havoc on Gotham, Batman must accept one of the greatest psychological tests.'),
@@ -165,6 +178,7 @@ INSERT INTO Movies (title, releaseYear, description) VALUES
 ('Toy Story', 1995, 'A cowboy doll is profoundly threatened when a new spaceman figure supplants him as top toy in a boy room.'),
 ('Knives Out', 2019, 'A detective investigates the death of a patriarch of an eccentric, combative family.');
 
+
 -- Insert Age Ratings
 INSERT INTO AgeRating (label) VALUES
 ('G'),
@@ -172,6 +186,7 @@ INSERT INTO AgeRating (label) VALUES
 ('PG-13'),
 ('R'),
 ('NC-17');
+
 
 -- Insert Movie Age Ratings
 INSERT INTO MovieAgeRating (movieID, ratingID) VALUES
@@ -190,6 +205,7 @@ INSERT INTO MovieAgeRating (movieID, ratingID) VALUES
 (13, 4), -- Get Out - R
 (14, 1), -- Toy Story - G
 (15, 3); -- Knives Out - PG-13
+
 
 -- Insert Tags (Genres, Cast, Directors)
 INSERT INTO Tags (type, value) VALUES
@@ -242,6 +258,7 @@ INSERT INTO Tags (type, value) VALUES
 ('Cast', 'Daniel Craig'),
 ('Cast', 'Ana de Armas');
 
+
 -- Insert Movie Tags
 INSERT INTO MovieTags (movieID, tagID) VALUES
 -- Shawshank Redemption
@@ -275,11 +292,13 @@ INSERT INTO MovieTags (movieID, tagID) VALUES
 -- Knives Out
 (15, 4), (15, 10), (15, 23), (15, 44), (15, 45);
 
+
 -- Insert Categories
 INSERT INTO Categories (type) VALUES
 ('Feature'),
 ('Short'),
 ('Blockbuster');
+
 
 -- Insert Movie Categories
 INSERT INTO MovieCategories (movieID, categoryID) VALUES
@@ -299,11 +318,13 @@ INSERT INTO MovieCategories (movieID, categoryID) VALUES
 (14, 1), (14, 3), -- Toy Story - Feature, Blockbuster
 (15, 1); -- Knives Out - Feature
 
+
 -- Insert Sources
 INSERT INTO Sources (type) VALUES
 ('Streaming Service'),
 ('Buy'),
 ('Rent');
+
 
 -- Insert Movie Sources
 INSERT INTO MovieSources (movieID, sourceID) VALUES
@@ -324,7 +345,8 @@ INSERT INTO MovieSources (movieID, sourceID) VALUES
 (14, 1), (14, 2), (14, 3),
 (15, 1), (15, 2), (15, 3);
 
--- Insert Watchlist entries (various users, various movies, different statuses)
+
+--insert Watchlist entries (various users, various movies, different statuses)
 INSERT INTO Watchlist (userID, movieID, status) VALUES
 (1, 1, 'Completed'),
 (1, 2, 'Watching'),
@@ -347,6 +369,7 @@ INSERT INTO Watchlist (userID, movieID, status) VALUES
 (9, 1, 'Completed'),
 (9, 2, 'Completed'),
 (10, 11, 'Plan to Watch');
+
 
 -- Insert Reviews (50+ reviews with varied ratings)
 INSERT INTO Reviews (userID, movieID, rating, flags) VALUES
@@ -416,6 +439,7 @@ INSERT INTO Reviews (userID, movieID, rating, flags) VALUES
 (3, 6, 8.9, 0),
 (9, 13, 8.5, 1); -- One flagged review
 
+
 -- Insert Comments (30+ comments)
 INSERT INTO Comments (userID, reviewID, content) VALUES
 (2, 1, 'Totally agree! One of the best movies ever made.'),
@@ -449,6 +473,7 @@ INSERT INTO Comments (userID, reviewID, content) VALUES
 (9, 18, 'One of my all-time favorites.'),
 (10, 9, 'Need to watch this again to catch all the details.');
 
+
 -- Insert Likes (50+ likes across various reviews)
 INSERT INTO Likes (userID, reviewID) VALUES
 (2, 1), (3, 1), (4, 1), (5, 1), (6, 1),
@@ -470,33 +495,30 @@ INSERT INTO Likes (userID, reviewID) VALUES
 (5, 45), (7, 45), (8, 45);
 
 
-
-#QUERIES
-
-
 -- 1. Average movie review
--- I joined Movies with Reviews using movieID to calculate the average rating for each movie. 
--- I only included reviews with no flags (flags = 0) to ensure invalid reviews 
--- don't affect the score. I used ROUND to make the ratings look neat and sorted them so the 
+-- I joined Movies with Reviews using movieID to calculate the average rating for each movie.
+-- I only included reviews with no flags (flags = 0) to ensure invalid reviews
+-- don't affect the score. I used ROUND to make the ratings look neat and sorted them so the
 -- highest-rated movies show first.
-SELECT 
+
+
+SELECT
     m.title,
     ROUND(AVG(r.rating), 2) AS average_rating,
     COUNT(r.id) AS review_count
 FROM Movies m
-LEFT JOIN Reviews r 
-    ON m.id = r.movieID AND r.flags = 0
+LEFT JOIN Reviews r ON m.id = r.movieID AND r.flags = 0
 GROUP BY m.id, m.title
 ORDER BY average_rating DESC;
 
 
 -- 2. Top rated genre overall
--- This finds the genre with the highest average movie rating. 
--- I joined Tags → MovieTags → Movies → Reviews to get ratings for each genre. 
--- Only valid reviews were counted. 
+-- This finds the genre with the highest average movie rating.
+-- I joined Tags → MovieTags → Movies → Reviews to get ratings for each genre.
+-- Only valid reviews were counted.
 -- Then I grouped by genre and averaged the ratings. LIMIT 1 gives the top genre.
 WITH GenreRatings AS (
-    SELECT 
+    SELECT
         t.value AS genre,
         AVG(r.rating) AS avg_rating
     FROM Tags t
@@ -512,13 +534,13 @@ ORDER BY avg_rating DESC
 LIMIT 1;
 
 
--- 3. Most liked reviews 
--- I counted likes for each review using the Likes table. I joined Reviews → Users → Movies 
--- to show the reviewer and movie title. 
--- LEFT JOIN ensures reviews with zero likes are included. Only valid reviews (flags = 0) are considered. 
+-- 3. Most liked reviews
+-- I counted likes for each review using the Likes table. I joined Reviews → Users → Movies
+-- to show the reviewer and movie title.
+-- LEFT JOIN ensures reviews with zero likes are included. Only valid reviews (flags = 0) are considered.
 -- Finally, I sorted by like_count to get the most liked reviews and limited the results to 5.
 WITH ReviewLikes AS (
-    SELECT 
+    SELECT
         r.id AS review_id,
         p.username,
         m.title AS movie_title,
@@ -533,8 +555,9 @@ WITH ReviewLikes AS (
 )
 SELECT review_id, username, movie_title, rating, like_count
 FROM ReviewLikes
-ORDER BY like_count DESC, review_id
+ORDER BY like_count DESC
 LIMIT 5;
+
 
 -- 4. top 5 highest rated movies by average rating
 /*natural language: Find the 5 movies with the highest average rating across all reviews.
@@ -543,80 +566,53 @@ LIMIT 5;
 SELECT
     m.title AS movieTitle,
     ROUND(AVG(r.rating), 2) AS averageRating,
-    COUNT(r.id) AS Total_Reviews
-FROM
-    Movies m
-JOIN
-    Reviews r ON m.id = r.movieID
-GROUP BY
-    m.id, m.title
-HAVING
-    COUNT(r.id) > 0
-ORDER BY
-    averageRating DESC
-LIMIT 5; 
+    COUNT(r.id) AS totalReviews
+FROM Movies m
+JOIN Reviews r ON m.id = r.movieID
+GROUP BY m.id, m.title
+HAVING COUNT(r.id) > 0
+ORDER BY averageRating DESC
+LIMIT 5;
+
 
 -- 5. display cast or director, and genre tags
-/*natural language: For a given movie title, show all people involved 
+/*natural language: For a given movie title, show all people involved
                     (Cast, Director), along with its Genre
 */
 SELECT
     m.title AS movieTitle,
     t.type AS tagType,
     t.value AS tagValue
-FROM
-    Movies m
-JOIN
-    MovieTags mt ON m.id = mt.movieID
-JOIN
-    Tags t ON mt.tagID = t.id
-WHERE
-    m.title = 'Mean Girls';
+FROM Movies m
+JOIN MovieTags mt ON m.id = mt.movieID
+JOIN Tags t ON mt.tagID = t.id
+WHERE m.title = 'Mean Girls';
 
-/*
--- Find all movies with a certain actor
-SELECT 
-    m.title AS movieTitle,
-    t.type AS tagType,
-    t.value AS tagValue
-FROM 
-    Movies m
-JOIN 
-    MovieTags mt ON m.id = mt.movieID
-JOIN 
-    Tags t ON mt.tagID = t.id
-WHERE 
-    t.value = 'Rachel McAdams';
-*/
 
 -- 6. number of reviews each user has written
-/*natural language: Show each user and how many reviews they have written 
+/*natural language: Show each user and how many reviews they have written
                     (users with no reviews are included)
 */
 SELECT
     p.username AS Username,
     COUNT(r.id) AS reviewsWritten
-FROM
-    ProfileInfo p
-LEFT JOIN
-    Reviews r ON p.userID = r.userID
-GROUP BY
-    p.username
-ORDER BY
-    reviewsWritten DESC;
+FROM ProfileInfo p
+LEFT JOIN Reviews r ON p.userID = r.userID
+GROUP BY p.username
+ORDER BY reviewsWritten DESC;
+
 
 /* 7. Query designed to look for the users that have written the most reviews.
-Print out the username and the total number of reviews they have submitted in 
+Print out the username and the total number of reviews they have submitted in
 descending order (from most to least) */
-
 SELECT
     p.username,
     COUNT(r.id) AS total_reviews
 FROM Reviews r
-JOIN Users u ON r.userID = u.id
-JOIN ProfileInfo p ON u.id = p.userID
+JOIN ProfileInfo p ON r.userID = p.userID
 GROUP BY p.username
 ORDER BY total_reviews DESC;
+
 
 /* 8. Display how many movies belong to each category type
 (from Feature, Short, Blockbuster) */
@@ -629,7 +625,6 @@ GROUP BY c.type;
 
 
 /* 9. List all of the movies that are tagged under the "Action" genre */
-
 SELECT
     m.title,
     m.releaseYear,
@@ -637,7 +632,8 @@ SELECT
 FROM Movies m
 JOIN MovieTags mt ON m.id = mt.movieID
 JOIN Tags t ON mt.tagID = t.id
-WHERE t.type = 'Genre' AND t.value = 'Action'; 
+WHERE t.type = 'Genre' AND t.value = 'Action';
+
 
 -- 10. Find the top 3 users who wrote the most reviews for each genre.
 WITH GenreUserReviews AS (
@@ -656,13 +652,12 @@ WITH GenreUserReviews AS (
 SELECT genre, username, total_reviews
 FROM GenreUserReviews
 ORDER BY genre, total_reviews DESC
-LIMIT 30; -- adjust as needed
-
+LIMIT 30;
 
 
 -- 11. Find movies whose average rating is above their genre's overall average rating.
 WITH MovieAverages AS (
-    SELECT 
+    SELECT
         m.id AS movieID,
         m.title,
         t.value AS genre,
@@ -671,41 +666,38 @@ WITH MovieAverages AS (
     JOIN Reviews r ON m.id = r.movieID
     JOIN MovieTags mt ON m.id = mt.movieID
     JOIN Tags t ON mt.tagID = t.id
-    WHERE t.type = 'Genre' AND r.flags = 0
+    WHERE t.type = 'Genre'
     GROUP BY m.id, m.title, t.value
 ),
 GenreAverages AS (
-    SELECT 
-        genre,
-        AVG(movie_avg) AS genre_avg
-    FROM MovieAverages
-    GROUP BY genre
+    SELECT
+        t.value AS genre,
+        AVG(r.rating) AS genre_avg
+    FROM Tags t
+    JOIN MovieTags mt ON t.id = mt.tagID
+    JOIN Movies m ON mt.movieID = m.id
+    JOIN Reviews r ON m.id = r.movieID
+    WHERE t.type = 'Genre'
+    GROUP BY t.value
 )
-SELECT 
-    ma.title AS movieTitle,
+SELECT
+    ma.title,
     ma.genre,
-    ROUND(ma.movie_avg, 2) AS movieAverage,
-    ROUND(ga.genre_avg, 2) AS genreAverage
+    ROUND(ma.movie_avg, 2) AS movie_avg,
+    ROUND(ga.genre_avg, 2) AS genre_avg
 FROM MovieAverages ma
 JOIN GenreAverages ga ON ma.genre = ga.genre
 WHERE ma.movie_avg > ga.genre_avg
-ORDER BY ma.genre, ma.movie_avg DESC;
-
-
-
+ORDER BY ma.movie_avg DESC;
 
 
 -- 12. Find directors whose movies have the highest average rating (minimum 2 movies reviewed).
 SELECT
-    t.value AS director,
-    ROUND(AVG(r.rating), 2) AS avg_rating,
-    COUNT(DISTINCT m.id) AS total_movies
-FROM Tags t
-JOIN MovieTags mt ON t.id = mt.tagID
-JOIN Movies m ON mt.movieID = m.id
-JOIN Reviews r ON m.id = r.movieID
-WHERE t.type = 'Director' AND r.flags = 0
-GROUP BY t.value
-HAVING COUNT(DISTINCT m.id) >= 2
-ORDER BY avg_rating DESC
-LIMIT 10;
+    m.title,
+    COUNT(c.id) AS total_comments
+FROM Comments c
+JOIN Reviews r ON c.reviewID = r.id
+JOIN Movies m ON r.movieID = m.id
+GROUP BY m.title
+ORDER BY total_comments DESC
+LIMIT 5;
