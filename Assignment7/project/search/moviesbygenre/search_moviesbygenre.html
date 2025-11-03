@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Movies by Genre</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <h2>Search Movies by Genre</h2>
+  <form action="search_moviesbygenre_results.php" method="get">
+    <label for="genre">Select Genre:</label>
+    <select id="genre" name="genre" required>
+      <option value="">-- Choose a Genre --</option>
+      <option value="Action">Action</option>
+      <option value="Drama">Drama</option>
+      <option value="Comedy">Comedy</option>
+      <option value="Sci-Fi">Sci-Fi</option>
+      <option value="Crime">Crime</option>
+      <option value="Thriller">Thriller</option>
+      <option value="Romance">Romance</option>
+      <option value="Horror">Horror</option>
+      <option value="Animation">Animation</option>
+      <option value="Mystery">Mystery</option>
+    </select>
+    <button type="submit">Search</button>
+  </form>
+  
+  <p><a href="https://clabsql.constructor.university/~rbelachew/index.php">← Back to Project Home</a></p>
+</body>
+</html>
