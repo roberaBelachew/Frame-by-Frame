@@ -11,9 +11,9 @@
   $msg = $_GET['msg'] ?? '';
 
   if ($status === 'success') {
-      echo "<p>✅ Relationship added successfully!</p>";
+      echo "<p> Relationship added successfully</p>";
   } else {
-      echo "<p style='color:red;'>❌ Error: " . htmlspecialchars($msg) . "</p>";
+      echo "<p style='color:red;'> Error: " . htmlspecialchars($msg) . "</p>";
   }
   ?>
   <p><a href="input_moviesources.html">Add Another Relationship</a> | <a href="https://clabsql.constructor.university/~rbelachew/index.php">Back to Main</a></p>
