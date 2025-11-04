@@ -1,5 +1,5 @@
 <?php
-// --- Database connection settings ---
+// --- database connection settings ---
 $host = 'localhost';
 $dbname = 'db_rbelachew';
 $username = 'rbelachew';
