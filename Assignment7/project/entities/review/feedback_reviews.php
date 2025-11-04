@@ -10,9 +10,12 @@
   $status = $_GET['status'] ?? '';
   $msg = $_GET['msg'] ?? '';
 
-  if ($status === 'success') {
-      echo "<p>Review added successfully</p>";
-  } else {
+  if ($status === 'success') 
+  {
+      echo "<p>Review was added</p>";
+  } 
+  else 
+  {
       echo "<p style='color:red;'> Error: " . htmlspecialchars($msg) . "</p>";
   }
   ?>
