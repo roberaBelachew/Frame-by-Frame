@@ -11,7 +11,7 @@
   $msg = $_GET['msg'] ?? '';
 
   if ($status === 'success') {
-      echo "<p> Age rating added successfully!</p>";
+      echo "<p> Age rating added successfully</p>";
   } else {
       echo "<p style='color:red;'>Error: " . htmlspecialchars($msg) . "</p>";
   }
