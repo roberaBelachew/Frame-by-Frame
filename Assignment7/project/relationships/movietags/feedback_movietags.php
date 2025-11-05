@@ -11,9 +11,9 @@
   $msg = $_GET['msg'] ?? '';
 
   if ($status === 'success') {
-      echo "<p>✅ Movie successfully linked to Tag!</p>";
+      echo "<p> Movie was successfully linked to Tag</p>";
   } else {
-      echo "<p style='color:red;'>❌ Error: " . htmlspecialchars($msg) . "</p>";
+      echo "<p style='color:red;'> Error: " . htmlspecialchars($msg) . "</p>";
   }
   ?>
   <p><a href="input_movietags.html">Link Another</a> | <a href="https://clabsql.constructor.university/~rbelachew/index.php">Back to Main</a></p>
