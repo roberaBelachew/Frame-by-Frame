@@ -23,7 +23,7 @@ if (empty($reviewID)) {
 }
 
 try {
-    // Get review details
+    //we get review details
     $query = "
       SELECT 
           r.id,
@@ -47,7 +47,6 @@ try {
     $stmt->execute(['reviewID' => $reviewID]);
     $review = $stmt->fetch(PDO::FETCH_ASSOC);
     
-    // Get comments for this review
     $commentQuery = "
       SELECT 
           c.content,
