@@ -7,7 +7,6 @@
 </head>
 <body>
   <h1>Add to Watchlist</h1>
-
   <form action="process_watchlist.php" method="POST">
     <label for="userID">User ID:</label><br>
     <input type="number" id="userID" name="userID" required><br><br>
@@ -15,12 +14,11 @@
     <label for="movieID">Movie ID:</label><br>
     <input type="number" id="movieID" name="movieID" required><br><br>
 
-    <label for="status">Status (optional):</label><br>
+    <label for="status">Status: </label><br>
     <input type="text" id="status" name="status" placeholder="e.g., Watching, Completed"><br><br>
 
     <input type="submit" value="Add to Watchlist">
   </form>
-
   <br>
   <a href="https://clabsql.constructor.university/~rbelachew/index.php">Back to Main</a>
 </body>

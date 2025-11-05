@@ -10,12 +10,12 @@
   $status = $_GET['status'] ?? '';
   $msg = $_GET['msg'] ?? '';
   if ($status === 'success') {
-      echo "<p>✅ Movie added successfully!</p>";
+      echo "<p> Movie was added </p>";
   } else {
-      echo "<p style='color:red;'>❌ Error: " . htmlspecialchars($msg) . "</p>";
+      echo "<p style='color:red;'> Error: " . htmlspecialchars($msg) . "</p>";
   }
   ?>
-  <p><a href="input_movie.html">Add Another Movie</a> | <a href="https://clabsql.constructor.university/~rbelachew/index.php">Back</a></p>
+  <p><a href="input_movie.html">Add another movie</a> | <a href="https://clabsql.constructor.university/~rbelachew/index.php">Back</a></p>
 </body>
 </html>
 
