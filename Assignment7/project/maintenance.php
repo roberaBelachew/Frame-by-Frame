@@ -45,7 +45,7 @@
     </ul>
 
     <div class="backlink">
-      <p><a href="https://clabsql.constructor.university/~rbelachew/index.php">⬅ Back to Project Home</a></p>
+      <p><a href="https://clabsql.constructor.university/~rbelachew/index.php"> Back to Project Home</a></p>
     </div>
   </div>
 </body>
