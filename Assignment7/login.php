@@ -1,23 +1,24 @@
 <?php
 session_start();
 require 'project/db_connect.php';
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') 
+{
     $email = $_POST['email'];
     $password = $_POST['password'];
-
     $stmt = $pdo->prepare("SELECT id, password, role FROM Users WHERE email = ?");
     $stmt->execute([$email]);
     $user = $stmt->fetch();
-
-    if ($user && password_verify($password, $user['password'])) {
+    if ($user && password_verify($password, $user['password'])) 
+    {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['email'] = $email;
         $_SESSION['role'] = $user['role'];
         header("Location: project/maintenance.php");
         exit();
-    } else {
-        $error = "Invalid login credentials.";
+    } 
+    else 
+    {
+        $error = "Invalid login credentials";
     }
 }
 ?>

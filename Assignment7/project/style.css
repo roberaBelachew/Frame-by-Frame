@@ -25,13 +25,13 @@ nav a {
   color: #FAFFFA;
   text-decoration: none;
   margin: 0 10px;
-  font-family: Oswald, sans-serif; /* Consistent with headers */
+  font-family: Oswald, sans-serif; 
   font-weight: bold;
 }
 
 nav a:hover {
   text-decoration: underline;
-  color: #ABFA54; /* Green Yellow accent on hover */
+  color: #ABFA54; 
 
 }
 
@@ -44,8 +44,8 @@ main {
 
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: Oswald, sans-serif; /* Bold headers */
-  color: #0D142B; /* Oxford Blue */
+  font-family: Oswald, sans-serif;
+  color: #0D142B; 
   margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
@@ -63,11 +63,11 @@ h3 {
 }
 
 a, .highlight {
-  color: #0044FF; /* Palatinate Blue for links and highlights */
+  color: #0044FF; 
 }
 
 button, .btn {
-  background-color: #FF5930; /* Giants Orange for CTA buttons */
+  background-color: #FF5930;
   color: #FAFFFA;
   border: none;
   padding: 0.5rem 1rem;
@@ -79,10 +79,10 @@ button, .btn {
 }
 
 button:hover, .btn:hover {
-  background-color: #ABFA54; /* Green Yellow hover effect */
-  color: #0D142B; /* Ensure readability */
+  background-color: #ABFA54;
+  color: #0D142B; 
 }
-/* Make body take full height and use flex layout */
+
 html, body {
   height: 100%;
   display: flex;
@@ -90,7 +90,6 @@ html, body {
   margin: 0;
 }
 
-/* Main content grows to fill available space */
 main {
   flex: 1;
   padding: 2rem;

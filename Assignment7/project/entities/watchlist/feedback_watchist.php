@@ -1,16 +1,19 @@
 <?php
 require_once("../../db_connect.php");
-
-try {
-    $stmt = $pdo->query("
+try 
+{
+    $stmt = $pdo->query
+    ("
         SELECT W.id, U.email AS user_email, M.title AS movie_title, W.status
         FROM Watchlist W
         JOIN Users U ON W.userID = U.id
         JOIN Movies M ON W.movieID = M.id
     ");
     $watchlist = $stmt->fetchAll(PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-    die("❌ Error fetching data: " . $e->getMessage());
+} 
+catch (PDOException $e) 
+{
+    die("Error fetching data: " . $e->getMessage());
 }
 ?>
 
@@ -42,7 +45,7 @@ try {
       <?php endforeach; ?>
     </table>
   <?php else: ?>
-    <p>No entries found in Watchlist.</p>
+    <p>No entries found in Watchlist</p>
   <?php endif; ?>
 
   <br>
