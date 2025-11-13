@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Most Liked Reviews</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <h2>Most Liked Reviews</h2>
+  <p>View the reviews that have received the most likes from the community.</p>
+  
+  <form action="search_likedreviews_results.php" method="get">
+    <label for="limit">Number of reviews to display:</label>
+    <select id="limit" name="limit">
+      <option value="5" selected>Top 5</option>
+      <option value="10">Top 10</option>
+      <option value="20">Top 20</option>
+    </select>
+    <button type="submit">View Reviews</button>
+  </form>
+  
+  <p><a href="https://clabsql.constructor.university/~rbelachew/index.php">← Back to Project Home</a></p>
+</body>
+</html>

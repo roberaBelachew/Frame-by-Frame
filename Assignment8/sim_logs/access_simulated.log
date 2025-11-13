@@ -1,0 +1,50 @@
+192.168.1.10 - - [09/Nov/2025:09:10:01 +0100] "GET /~rbelachew/index.php HTTP/1.1" 200 2140 "-" "Chrome"
+192.168.1.11 - - [09/Nov/2025:09:12:12 +0100] "GET /~rbelachew/login.php HTTP/1.1" 200 720 "https://constructor.university" "Firefox"
+192.168.1.11 - - [09/Nov/2025:09:12:40 +0100] "POST /~rbelachew/login.php HTTP/1.1" 200 810 "-" "Firefox"
+192.168.1.12 - - [09/Nov/2025:09:14:55 +0100] "GET /~rbelachew/project/maintenance.php HTTP/1.1" 200 1850 "https://clabsql.constructor.university" "Chrome"
+192.168.1.13 - - [09/Nov/2025:09:15:20 +0100] "GET /~rbelachew/project/entities/movies/input_movie.html HTTP/1.1" 200 1550 "-" "Safari"
+192.168.1.14 - - [09/Nov/2025:09:17:33 +0100] "GET /~rbelachew/project/entities/tags/input_tags.html HTTP/1.1" 200 1300 "-" "Edge"
+192.168.1.10 - - [09/Nov/2025:09:18:02 +0100] "GET /~rbelachew/project/search/avgmovie/search_avgmovie.html HTTP/1.1" 200 1420 "-" "Opera"
+
+192.168.1.15 - - [09/Nov/2025:10:00:19 +0100] "GET /~rbelachew/index.php HTTP/1.1" 404 512 "-" "Safari"
+192.168.1.16 - - [09/Nov/2025:10:05:14 +0100] "POST /~rbelachew/login.php HTTP/1.1" 500 128 "-" "Firefox"
+192.168.1.17 - - [09/Nov/2025:10:10:45 +0100] "GET /~rbelachew/gallery.html HTTP/1.1" 200 4500 "-" "Chrome"
+
+192.168.1.18 - - [10/Nov/2025:12:00:01 +0100] "GET /~rbelachew/index.php HTTP/1.1" 200 2137 "-" "Firefox"
+192.168.1.18 - - [10/Nov/2025:12:00:03 +0100] "GET /~rbelachew/project/search/avgmovie/search_avgmovie.html HTTP/1.1" 200 1400 "-" "Firefox"
+192.168.1.19 - - [10/Nov/2025:12:01:12 +0100] "GET /~rbelachew/index.php HTTP/1.1" 200 2137 "-" "Chrome"
+192.168.1.19 - - [10/Nov/2025:12:01:15 +0100] "GET /~rbelachew/project/search/likedreviews/search_likedreviews.html HTTP/1.1" 200 1500 "-" "Chrome"
+
+192.168.1.20 - - [10/Nov/2025:12:03:22 +0100] "GET /~rbelachew/project/index.html HTTP/1.1" 200 1850 "-" "Safari"
+192.168.1.21 - - [10/Nov/2025:12:03:29 +0100] "GET /~rbelachew/index.php HTTP/1.1" 200 2140 "-" "Firefox"
+
+192.168.1.22 - - [10/Nov/2025:12:04:55 +0100] "GET /~rbelachew/project/search/moviesbygenre/search_moviesbygenre.html HTTP/1.1" 200 1560 "-" "Edge"
+192.168.1.23 - - [10/Nov/2025:12:05:13 +0100] "GET /~rbelachew/project/maintenance.php HTTP/1.1" 403 256 "-" "Chrome"
+192.168.1.24 - - [10/Nov/2025:12:05:44 +0100] "GET /~rbelachew/login.php HTTP/1.1" 200 720 "-" "Firefox"
+192.168.1.24 - - [10/Nov/2025:12:05:48 +0100] "GET /~rbelachew/logout.php HTTP/1.1" 200 400 "-" "Firefox"
+
+192.168.1.25 - - [10/Nov/2025:12:06:11 +0100] "GET /~rbelachew/project/search/topgenre/search_topgenre.html HTTP/1.1" 200 1700 "-" "Chrome"
+192.168.1.26 - - [10/Nov/2025:12:06:51 +0100] "GET /~rbelachew/project/index.html HTTP/1.1" 200 1830 "-" "Firefox"
+
+192.168.1.27 - - [10/Nov/2025:12:07:39 +0100] "GET /~rbelachew/index.php HTTP/1.1" 200 2137 "-" "Opera"
+192.168.1.27 - - [10/Nov/2025:12:07:41 +0100] "GET /~rbelachew/imprint.html HTTP/1.1" 200 1000 "-" "Opera"
+
+192.168.1.28 - - [10/Nov/2025:12:09:44 +0100] "GET /~rbelachew/project/search/avgmovie/search_avgmovie.html HTTP/1.1" 200 1420 "-" "Safari"
+192.168.1.28 - - [10/Nov/2025:12:09:47 +0100] "GET /~rbelachew/project/search/avgmovie/search_avgmovie_results.php HTTP/1.1" 200 1600 "-" "Safari"
+192.168.1.28 - - [10/Nov/2025:12:10:11 +0100] "GET /~rbelachew/project/search/avgmovie/search_avgmovie_detail.php?movieID=5 HTTP/1.1" 200 1800 "-" "Safari"
+
+192.168.1.30 - - [10/Nov/2025:12:12:22 +0100] "GET /~rbelachew/project/search/likedreviews/search_likedreviews.html HTTP/1.1" 200 1500 "-" "Safari"
+192.168.1.30 - - [10/Nov/2025:12:12:27 +0100] "GET /~rbelachew/project/search/likedreviews/search_likedreviews_results.php HTTP/1.1" 200 1680 "-" "Safari"
+192.168.1.30 - - [10/Nov/2025:12:13:02 +0100] "GET /~rbelachew/project/search/likedreviews/search_likedreviews_detail.php?reviewID=7 HTTP/1.1" 200 1750 "-" "Safari"
+
+192.168.1.35 - - [10/Nov/2025:12:14:11 +0100] "GET /~rbelachew/project/maintenance.php HTTP/1.1" 500 128 "-" "Unknown"
+
+192.168.1.40 - - [10/Nov/2025:12:15:33 +0100] "GET /~rbelachew/project/style.css HTTP/1.1" 200 600 "-" "Chrome"
+192.168.1.40 - - [10/Nov/2025:12:15:34 +0100] "GET /~rbelachew/style.css HTTP/1.1" 200 600 "-" "Chrome"
+
+192.168.1.41 - - [10/Nov/2025:12:16:01 +0100] "GET /~rbelachew/login.php HTTP/1.1" 200 720 "-" "Firefox"
+192.168.1.41 - - [10/Nov/2025:12:16:07 +0100] "GET /~rbelachew/project/entities/movies/input_movie.html HTTP/1.1" 200 1500 "-" "Firefox"
+
+192.168.1.42 - - [10/Nov/2025:12:17:41 +0100] "GET /~rbelachew/project/index.html HTTP/1.1" 200 1850 "-" "Chrome"
+192.168.1.50 - - [10/Nov/2025:12:18:22 +0100] "GET /~rbelachew/index.php HTTP/1.1" 200 2100 "-" "Safari"
+
