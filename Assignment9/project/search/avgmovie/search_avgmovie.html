@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Average Movie Rating</title>
+
+  <link rel="stylesheet" href="../../style.css">
+
+  <!-- jQuery UI Autocomplete dependencies -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+
+  <script>
+    $(function () {
+      $("#title").autocomplete({
+        source: "autocomplete_movies.php",
+        minLength: 1
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <h2>Search Average Movie Rating</h2>
+
+  <form action="search_avgmovie_results.php" method="get">
+    <label for="title">Movie Title (partial):</label>
+    <input type="text" id="title" name="title" required>
+    <button type="submit">Search</button>
+  </form>
+
+  <p><a href="https://clabsql.constructor.university/~rbelachew/index.php"> Back to Project Home</a></p>
+</body>
+</html>
+

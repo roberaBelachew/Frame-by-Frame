@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Most Liked Reviews</title>
+
+  <!-- jQuery + jQuery UI -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+
+  <link rel="stylesheet" href="../../style.css">
+
+  <script>
+    $(function () {
+        $("#limit").autocomplete({
+            minLength: 1,
+
+            source: function (request, response) {
+                let term = request.term;
+
+                if (!/^\d+$/.test(term)) {
+                    response([]);
+                    return;
+                }
+
+                let num = parseInt(term);
+
+                let suggestions = [
+                    num,
+                    num * 10
+                ];
+
+                response(suggestions.map(String));
+            }
+        });
+    });
+  </script>
+
+</head>
+<body>
+
+  <h2>Most Liked Reviews</h2>
+  <p>View the reviews that have received the most likes from the community.</p>
+
+  <form action="search_likedreviews_results.php" method="get">
+    <label for="limit">Number of reviews to display:</label>
+    <input type="text" id="limit" name="limit" placeholder="e.g. 5" required>
+    <button type="submit">View Reviews</button>
+  </form>
+
+  <p><a href="https://clabsql.constructor.university/~rbelachew/index.php">Return Home</a></p>
+
+</body>
+</html>
+

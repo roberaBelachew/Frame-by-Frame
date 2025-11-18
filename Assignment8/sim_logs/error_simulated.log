@@ -1,0 +1,74 @@
+[Mon Nov  3 08:12:33 2025] [php7:notice] [pid 26188] [client 172.16.38.11:53844] PHP Notice: Undefined variable $x
+[Mon Nov  3 14:33:12 2025] [php7:warn] [pid 26189] [client 172.16.38.12:53845] PHP Warning: Division by zero
+[Mon Nov  3 16:20:05 2025] [php7:error] [pid 26190] [client 172.16.38.13:53846] PHP Fatal error: Call to undefined function
+[Tue Nov  4 09:05:44 2025] [php7:notice] [pid 26191] [client 172.16.38.14:53847] PHP Notice: Undefined index
+[Tue Nov  4 11:15:21 2025] [php7:warn] [pid 26192] [client 172.16.38.15:53848] PHP Warning: fopen failed
+[Tue Nov  4 17:45:33 2025] [php7:error] [pid 26193] [client 172.16.38.16:53849] PHP Fatal error: Cannot redeclare function
+[Wed Nov  5 08:22:10 2025] [php7:notice] [pid 26194] [client 172.16.38.17:53850] PHP Notice: Undefined variable $y
+[Wed Nov  5 10:30:45 2025] [php7:warn] [pid 26195] [client 172.16.38.18:53851] PHP Warning: include failed
+[Wed Nov  5 15:12:33 2025] [php7:error] [pid 26196] [client 172.16.38.19:53852] PHP Fatal error: Uncaught Exception
+[Thu Nov  6 09:40:12 2025] [php7:notice] [pid 26197] [client 172.16.38.20:53853] PHP Notice: Undefined index
+[Thu Nov  6 12:50:01 2025] [php7:warn] [pid 26198] [client 172.16.38.21:53854] PHP Warning: fopen failed
+[Thu Nov  6 18:33:22 2025] [php7:error] [pid 26199] [client 172.16.38.22:53855] PHP Fatal error: Call to undefined method
+[Fri Nov  7 07:22:11 2025] [php7:notice] [pid 26200] [client 172.16.38.23:53856] PHP Notice: Undefined variable $z
+[Fri Nov  7 10:11:05 2025] [php7:warn] [pid 26201] [client 172.16.38.24:53857] PHP Warning: Invalid argument supplied
+[Fri Nov  7 16:45:50 2025] [php7:error] [pid 26202] [client 172.16.38.25:53858] PHP Fatal error: Cannot redeclare class
+[Sat Nov  8 08:12:30 2025] [php7:notice] [pid 26203] [client 172.16.38.26:53859] PHP Notice: Undefined variable $a
+[Sat Nov  8 11:30:11 2025] [php7:warn] [pid 26204] [client 172.16.38.27:53860] PHP Warning: fopen failed
+[Sat Nov  8 15:40:05 2025] [php7:error] [pid 26205] [client 172.16.38.28:53861] PHP Fatal error: Uncaught Exception
+[Sun Nov  9 09:25:12 2025] [php7:notice] [pid 26206] [client 172.16.38.29:53862] PHP Notice: Undefined index
+[Sun Nov  9 12:33:50 2025] [php7:warn] [pid 26207] [client 172.16.38.30:53863] PHP Warning: Division by zero
+[Sun Nov  9 16:15:22 2025] [php7:error] [pid 26208] [client 172.16.38.31:53864] PHP Fatal error: Cannot redeclare function
+[Mon Nov 10 08:10:33 2025] [php7:notice] [pid 26209] [client 172.16.38.32:53865] PHP Notice: Undefined variable $b
+[Mon Nov 10 11:22:55 2025] [php7:warn] [pid 26210] [client 172.16.38.33:53866] PHP Warning: fopen failed
+[Mon Nov 10 14:30:12 2025] [php7:error] [pid 26211] [client 172.16.38.34:53867] PHP Fatal error: Call to undefined method
+[Mon Nov 10 16:45:40 2025] [php7:notice] [pid 26212] [client 172.16.38.35:53868] PHP Notice: Undefined index
+[Mon Nov 10 18:12:33 2025] [php7:warn] [pid 26213] [client 172.16.38.36:53869] PHP Warning: Invalid argument supplied
+[Mon Nov 10 20:50:11 2025] [php7:error] [pid 26214] [client 172.16.38.37:53870] PHP Fatal error: Cannot redeclare class
+[Sun Nov 10 09:12:33 2025] [php7:notice] [pid 26188] [client 172.16.38.11:53844] PHP Notice:  Undefined variable: user_id in /home/rbelachew/public_html/index.php on line 24
+[Sun Nov 10 09:13:01 2025] [php7:warn] [pid 26189] [client 172.16.38.12:53845] PHP Warning:  Division by zero in /home/rbelachew/public_html/project/update.php on line 17
+[Sun Nov 10 09:14:55 2025] [php7:error] [pid 26190] [client 172.16.38.13:53846] PHP Fatal error:  Uncaught Error: Call to undefined function sanitize_input() in /home/rbelachew/public_html/login.php:10
+[Sun Nov 10 09:20:10 2025] [php7:notice] [pid 26191] [client 172.16.38.14:53847] PHP Notice:  Undefined index: page in /home/rbelachew/public_html/index.php on line 30
+[Sun Nov 10 09:25:48 2025] [php7:warn] [pid 26192] [client 172.16.38.15:53848] PHP Warning:  file_get_contents(/home/rbelachew/public_html/data.txt): failed to open stream: No such file or directory in /home/rbelachew/public_html/project/list.php on line 12
+[Sun Nov 10 09:27:33 2025] [php7:error] [pid 26193] [client 172.16.38.16:53849] PHP Fatal error:  Cannot redeclare function parseAccessLine() in /home/rbelachew/public_html/scripts/analyze_logs.php on line 45
+[Sun Nov 10 09:31:45 2025] [php7:notice] [pid 26194] [client 172.16.38.17:53850] PHP Notice:  Undefined variable: request_method in /home/rbelachew/public_html/login.php on line 18
+[Sun Nov 10 09:32:50 2025] [php7:warn] [pid 26195] [client 172.16.38.18:53851] PHP Warning:  include(/home/rbelachew/public_html/scripts/functions.php): failed to open stream: No such file or directory in /home/rbelachew/public_html/index.php on line 5
+[Sun Nov 10 09:36:10 2025] [php7:error] [pid 26196] [client 172.16.38.19:53852] PHP Fatal error:  Uncaught Error: Call to undefined function db_connect() in /home/rbelachew/public_html/project/details.php:8
+[Sun Nov 10 09:40:12 2025] [php7:warn] [pid 26197] [client 172.16.38.20:53853] PHP Warning:  fopen(/home/rbelachew/public_html/log.txt): failed to open stream: Permission denied in /home/rbelachew/public_html/project/edit.php on line 22
+[Sun Nov 10 09:42:50 2025] [php7:notice] [pid 26198] [client 172.16.38.21:53854] PHP Notice:  Undefined index: id in /home/rbelachew/public_html/project/edit.php on line 10
+[Sun Nov 10 09:43:33 2025] [php7:error] [pid 26199] [client 172.16.38.22:53855] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/rbelachew/public_html/scripts/analyze_logs.php on line 80
+[Sun Nov 10 09:44:20 2025] [php7:warn] [pid 26200] [client 172.16.38.23:53856] PHP Warning:  fopen(/home/rbelachew/public_html/config.php): failed to open stream: Permission denied in /home/rbelachew/public_html/login.php on line 7
+[Sun Nov 10 09:45:44 2025] [php7:notice] [pid 26201] [client 172.16.38.24:53857] PHP Notice:  Undefined variable: password in /home/rbelachew/public_html/login.php on line 15
+[Sun Nov 10 09:46:30 2025] [php7:error] [pid 26202] [client 172.16.38.25:53858] PHP Fatal error:  Uncaught Error: Call to undefined method Project::save() in /home/rbelachew/public_html/project/update.php:25
+[Sun Nov 10 09:50:10 2025] [php7:warn] [pid 26203] [client 172.16.38.26:53859] PHP Warning:  fopen(/home/rbelachew/public_html/logs/errors.log): failed to open stream: No such file or directory in /home/rbelachew/public_html/scripts/analyze_logs.php on line 12
+[Sun Nov 10 10:01:12 2025] [php7:warn] [pid 27101] [client 172.16.38.30:54011] PHP Warning:  Invalid argument supplied for foreach() in /home/rbelachew/public_html/project/list.php on line 44
+[Sun Nov 10 10:02:55 2025] [php7:notice] [pid 27102] [client 172.16.38.31:54012] PHP Notice:  Undefined index: session in /home/rbelachew/public_html/login.php on line 7
+[Sun Nov 10 10:03:33 2025] [php7:error] [pid 27103] [client 172.16.38.32:54013] PHP Fatal error:  Call to a member function fetch() on boolean in /home/rbelachew/public_html/project/details.php on line 19
+[Sun Nov 10 10:05:48 2025] [php7:warn] [pid 27104] [client 172.16.38.33:54014] PHP Warning:  Use of deprecated function split() in /home/rbelachew/public_html/index.php on line 55
+[Sun Nov 10 10:07:11 2025] [php7:notice] [pid 27105] [client 172.16.38.34:54015] PHP Notice:  Undefined offset: 2 in /home/rbelachew/public_html/project/update.php on line 29
+[Sun Nov 10 10:07:55 2025] [php7:error] [pid 27106] [client 172.16.38.35:54016] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/rbelachew/public_html/project/search/moviesbygenre/search_moviesbygenre_results.php on line 14
+[Sun Nov 10 10:09:22 2025] [php7:warn] [pid 27107] [client 172.16.38.36:54017] PHP Warning:  fopen(/home/rbelachew/public_html/tmp/cache): failed to open stream: Permission denied in /home/rbelachew/public_html/project/edit.php on line 10
+[Sun Nov 10 10:11:33 2025] [php7:error] [pid 27108] [client 172.16.38.37:54018] PHP Fatal error:  Uncaught Error: Class 'Movie' not found in /home/rbelachew/public_html/project/entities/movies/process_movie.php:8
+[Sun Nov 10 10:13:01 2025] [php7:notice] [pid 27109] [client 172.16.38.38:54019] PHP Notice:  Trying to access array offset on value of type null in /home/rbelachew/public_html/project/entities/review/process_reviews.php on line 22
+[Sun Nov 10 10:14:14 2025] [php7:warn] [pid 27110] [client 172.16.38.39:54020] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home/rbelachew/public_html/project/entities/user/process_users.php on line 17
+[Sun Nov 10 10:16:55 2025] [php7:error] [pid 27111] [client 172.16.38.40:54021] PHP Fatal error:  Cannot redeclare sanitize() in /home/rbelachew/public_html/project/functions.php on line 4
+[Sun Nov 10 10:18:33 2025] [php7:notice] [pid 27112] [client 172.16.38.41:54022] PHP Notice:  A non well formed numeric value encountered in /home/rbelachew/public_html/project/entities/watchlist/process_watchlist.php on line 19
+[Sun Nov 10 10:19:40 2025] [php7:warn] [pid 27113] [client 172.16.38.42:54023] PHP Warning:  include(/home/rbelachew/public_html/config.php): failed to open stream: No such file or directory in /home/rbelachew/public_html/index.php on line 4
+[Sun Nov 10 10:20:55 2025] [php7:error] [pid 27114] [client 172.16.38.43:54024] PHP Fatal error:  Uncaught Error: Call to undefined function renderHeader() in /home/rbelachew/public_html/project/search/topgenre/search_topgenre_results.php:5
+[Sun Nov 10 10:22:21 2025] [php7:notice] [pid 27115] [client 172.16.38.44:54025] PHP Notice:  Undefined variable: filterValue in /home/rbelachew/public_html/project/search/avgmovie/search_avgmovie_results.php on line 11
+[Sun Nov 10 10:24:12 2025] [php7:warn] [pid 27116] [client 172.16.38.45:54026] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent in /home/rbelachew/public_html/login.php on line 2
+[Sun Nov 10 10:26:52 2025] [php7:error] [pid 27117] [client 172.16.38.46:54027] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rbelachew/public_html/project/header.php' in /home/rbelachew/public_html/index.php on line 3
+[Sun Nov 10 09:12:33 2025] [php7:notice] [pid 26188] [client 192.168.1.10:53844] PHP Notice: Undefined variable: user_id in /home/rbelachew/public_html/index.php on line 24
+[Sun Nov 10 09:14:55 2025] [php7:error] [pid 26190] [client 192.168.1.11:53846] PHP Fatal error: Uncaught Error: Call to undefined function sanitize_input() in /home/rbelachew/public_html/login.php:10
+[Sun Nov 10 09:17:33 2025] [php7:warn] [pid 26203] [client 192.168.1.12:53859] PHP Warning: file_get_contents(/home/rbelachew/public_html/data.txt): failed to open stream
+[Sun Nov 10 09:20:10 2025] [php7:notice] [pid 26191] [client 192.168.1.14:53847] PHP Notice: Undefined index: page
+[Sun Nov 10 09:25:48 2025] [php7:warn] [pid 26192] [client 192.168.1.15:53848] PHP Warning: fopen(/home/rbelachew/logs/log.txt): Permission denied
+[Sun Nov 10 09:27:33 2025] [php7:error] [pid 26193] [client 192.168.1.16:53849] PHP Fatal error: Cannot redeclare function parseAccessLine()
+[Sun Nov 10 09:31:45 2025] [php7:notice] [pid 26194] [client 192.168.1.17:53850] PHP Notice: Undefined variable: request_method in /login.php
+[Sun Nov 10 09:32:50 2025] [php7:warn] [pid 26195] [client 192.168.1.18:53851] PHP Warning: include(functions.php): failed to open stream
+[Sun Nov 10 09:36:10 2025] [php7:error] [pid 26196] [client 192.168.1.19:53852] PHP Fatal error: Call to undefined function db_connect()
+[Mon Nov 10 10:02:11 2025] [php7:warn] [pid 27000] [client 192.168.1.20:53000] PHP Warning: fopen(config.php): Permission denied
+[Mon Nov 10 10:03:10 2025] [php7:notice] [pid 27002] [client 192.168.1.21:53001] PHP Notice: Undefined index: id in edit.php
+[Mon Nov 10 10:04:40 2025] [php7:error] [pid 27003] [client 192.168.1.22:53002] PHP Fatal error: Maximum execution time exceeded
+[Mon Nov 10 10:05:55 2025] [php7:warn] [pid 27004] [client 192.168.1.23:53003] PHP Warning: fopen(errors.log): No such file or directory
+

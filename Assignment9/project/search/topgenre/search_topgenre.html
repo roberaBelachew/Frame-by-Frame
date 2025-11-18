@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Genre Rating</title>
+  <link rel="stylesheet" href="../../style.css">
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <h2>Search Genre Rating</h2>
+
+  <p>Type part of a genre name to search. Suggestions will appear automatically.</p>
+
+  <label for="genre">Genre (partial):</label>
+  <input type="text" id="genre" name="genre">
+
+  <form action="search_topgenre_results.php" method="get">
+      <input type="hidden" id="genre_hidden" name="genre">
+      <button type="submit">Search</button>
+  </form>
+
+  <p><a href="https://clabsql.constructor.university/~rbelachew/index.php">← Back to Project Home</a></p>
+
+  <script>
+  $(function () {
+      $("#genre").autocomplete({
+          source: "autocomplete_genres.php",
+          minLength: 1,
+          select: function(event, ui) {
+              $("#genre_hidden").val(ui.item.value);
+          }
+      });
+
+      $("#genre").on("input", function() {
+          $("#genre_hidden").val($(this).val());
+      });
+  });
+  </script>
+
+</body>
+</html>
+
