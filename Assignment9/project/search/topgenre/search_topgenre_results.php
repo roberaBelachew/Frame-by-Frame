@@ -13,7 +13,7 @@ if (empty($genre)) {
 }
 
 try {
-    // Query for selected genre
+    
     $query = "
         SELECT 
             t.value AS genre,
