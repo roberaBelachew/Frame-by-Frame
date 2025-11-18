@@ -12,7 +12,7 @@ echo "Connection file loaded...<br>";
 if ($conn) {
     echo "Connection object exists!<br>";
     
-    // Test a simple query
+  
     $result = $conn->query("SELECT * FROM Movies LIMIT 5");
     
     if ($result) {
