@@ -23,7 +23,7 @@ if (empty($title)) {
 }
 
 try {
-    // Find matching movies
+    
     $query = "
       SELECT DISTINCT m.id, m.title
       FROM Movies m
@@ -59,7 +59,7 @@ try {
     <?php
     $movieID = $movie['id'];
 
-    // Fetch associated review ratings + usernames
+    
     $q2 = "
       SELECT r.rating, r.flags, u.email AS username
       FROM Reviews r
