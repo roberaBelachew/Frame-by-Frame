@@ -23,7 +23,7 @@ if (empty($genre)) {
 }
 
 try {
-    // Get all movies in this genre with their ratings
+    
     $query = "
       SELECT 
           m.id, 
