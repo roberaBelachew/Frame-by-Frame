@@ -32,7 +32,10 @@ session_start();
     <ul>
       <li><a href="project/search/avgmovie/search_avgmovie.html">Search Average Movie Rating</a></li>
       <li><a href="project/search/topgenre/search_topgenre.html">Search Genre Rating</a></li>
-      <li><a href="project/search/likedreviews/search_likedreviews.html">Search Most Liked Reviews</a></li>
+
+      <!-- UPDATED LINE BELOW -->
+      <li><a href="project/search/reviews/search_reviews_movie.html">Search Reviews by Movie</a></li>
+
       <li><a href="project/search/moviesbygenre/search_moviesbygenre.html">Search Movies by Genre</a></li>
     </ul>
 
@@ -63,4 +66,3 @@ session_start();
   </footer>
 </body>
 </html>
-

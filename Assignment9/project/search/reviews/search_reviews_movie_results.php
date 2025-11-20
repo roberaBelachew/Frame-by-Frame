@@ -16,14 +16,14 @@ if (empty($title)) {
     </head>
     <body>
       <p style='color:red;'>Please enter a movie title.</p>
-      <p><a href='search_reviews_movie.html'> ^f^p Back to Search</a></p>
+      <p><a href='search_reviews_movie.html'>← Back to Search</a></p>
     </body>
     </html>";
     exit;
 }
 
 try {
-    
+    // Find matching movies
     $query = "
       SELECT DISTINCT m.id, m.title
       FROM Movies m
@@ -51,7 +51,7 @@ try {
 
   <?php if (count($movies) === 0): ?>
     <p>No movies found.</p>
-    <p><a href="search_reviews_movie.html"> ^f^p New Search</a></p>
+    <p><a href="search_reviews_movie.html">← New Search</a></p>
   <?php endif; ?>
 
   <?php foreach ($movies as $movie): ?>
@@ -59,7 +59,7 @@ try {
     <?php
     $movieID = $movie['id'];
 
-  
+    // Fetch associated review ratings + usernames
     $q2 = "
       SELECT r.rating, r.flags, u.email AS username
       FROM Reviews r
@@ -101,7 +101,7 @@ try {
   <?php endforeach; ?>
 
   <p>
-    <a href="search_reviews_movie.html"> ^f^p New Search</a> |
+    <a href="search_reviews_movie.html">← New Search</a> |
     <a href="https://clabsql.constructor.university/~rbelachew/index.php">Back to Project Home</a>
   </p>
 
