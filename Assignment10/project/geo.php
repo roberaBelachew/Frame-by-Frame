@@ -95,7 +95,7 @@ const ip  = "<?= htmlspecialchars($ip) ?>";
 
 const map = L.map('map').setView([lat, lon], 12);
 
-// Load map tiles
+
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; OpenStreetMap contributors'
