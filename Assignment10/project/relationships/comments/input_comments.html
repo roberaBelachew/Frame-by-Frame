@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Comment</title>
+</head>
+<body>
+  <h2>Add a Comment</h2>
+  <form action="process_comments.php" method="post">
+    <label for="userID">User ID:</label>
+    <input type="number" id="userID" name="userID" required><br><br>
+
+    <label for="reviewID">Review ID:</label>
+    <input type="number" id="reviewID" name="reviewID" required><br><br>
+
+    <label for="content">Comment:</label><br>
+    <textarea id="content" name="content" rows="4" cols="50" required></textarea><br><br>
+
+    <button type="submit">Submit Comment</button>
+  </form>
+  <p><a href="https://clabsql.constructor.university/~rbelachew/index.php">Back to Main Page</a></p>
+</body>
+</html>
+
